@@ -27,6 +27,15 @@
             text-align: center;
         }
 
+        .cardButton {
+            float: bottom;
+        }
+
+        .cardImage {
+            width: 365.5px;
+            height: auto;
+        }
+
     </style>
 </head>
 
@@ -50,6 +59,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="alexResume-2018.pdf">Resume</a>
                 </li>
+
+                <!--
+                    Soon to come.
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get to Know Me</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -58,7 +71,7 @@
                         <a class="dropdown-item" href="portfolio.html">Portfolio</a>
                     </div>
                 </li>
-            </ul>
+            </ul>-->
 
             <!-- Disabling Search Box as it isn't needed
             <form class="form-inline my-2 my-lg-0">
@@ -82,43 +95,35 @@
         <h1 class="center">Some of my Projects</h1>
         <p style="text-align:center">Below you will find some of my projects from the past few years as well as my most recent resume. </p>
 
-
-
-
-
-
         <div class="jumbotron" id="frontPageCards">
 
             <div class="card-deck">
 
                 <div class="card">
-                    <a href="alexResume-2018.pdf"><img class="card-img-top" src="resume.png" alt="Steganography"></a>
+                    <a href="alexResume-2018.pdf"><img class="card-img-top cardImage" src="resume.png" alt="Steganography"></a>
                     <div class="card-body">
                         <h4 class="card-title text-center">My Resume</h4>
-
-
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card-img-top" src="steg.jpg" alt="Steganography">
+                    <img class="card-img-top cardImage" src="steg.jpg" alt="Steganography">
                     <div class="card-body">
                         <h4 class="card-title text-center">Steganography</h4>
                         <p class="card-text">I created a C++ based Terminal application that encrypted and decrypted text into pictures.</p>
-                        <a href="https://github.com/alexdclark/Steganography" class="btn btn-primary btn-lg btn-block">Github</a>
+                        <a href="https://github.com/alexdclark/Steganography" class="btn btn-primary btn-lg btn-block float:bottom">Github</a>
 
                     </div>
                 </div>
+
                 <div class="card">
                     <img class="card-img-top" src="Campus.png" alt="UT Martin Virtual Campus">
 
                     <div class="card-body">
-                        <!-- Github not up for this yet working on it 
-        <a href="https://github.com/alexdclark/UTMVirtualCampus"> <h4 class="card-title text-center">UT Martin Virtual Campus</h4></a>-->
                         <h4 class="card-title text-center">UT Martin Virtual Campus</h4>
                         <p class="card-text">Worked with two of my classmates to recreate a portion of the UT Martin Campus using tools like AutoCad and the Unity Game Engine.</p>
-                        <a href="https://www.utm.edu/webshare/cens/papers/09121753-495PaperFinal.pdf" class="btn btn-primary btn-lg btn-block">Research Paper</a>
-                        <a href="https://github.com/alexdclark/UTMVirtualCampus/blob/master/README.md" class="btn btn-primary btn-lg btn-block">Standalone Downloads</a>
+                        <a href="https://www.utm.edu/webshare/cens/papers/09121753-495PaperFinal.pdf" class="btn btn-primary btn-lg btn-block cardButton">Research Paper</a>
+                        <a href="https://github.com/alexdclark/UTMVirtualCampus/blob/master/README.md" class="btn btn-primary btn-lg btn-block cardButton">Standalone Downloads</a>
                     </div>
                 </div>
 
@@ -128,10 +133,10 @@
 
                         <h4 class="card-title text-center">C# SQL Music Collection</h4>
                         <p class="card-text">Created a simple Windows Form application in C# that ran commands to pull and push data to a local SQL Database.</p>
-                        <a href="https://github.com/alexdclark/Basic-Music-Database-Windows-Form-App" class="btn btn-primary btn-lg btn-block">Github</a>
+                        <a style="float:bottom" href="https://github.com/alexdclark/Basic-Music-Database-Windows-Form-App" class="btn btn-primary btn-lg btn-block cardButton">Github</a>
                     </div>
-
                 </div>
+
             </div>
         </div>
 
