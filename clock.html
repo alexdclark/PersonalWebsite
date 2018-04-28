@@ -93,14 +93,18 @@
     const secondHand = document.querySelector('.second-hand');
     const hourHand = document.querySelector('.hour-hand');
     const minuteHand = document.querySelector('.min-hand');
+     
+      var audio = document.createElement("audio");
+    audio.src = 'time.mp3';
 
   
 
 function playAudio(){
     //Adding in Freddie Mercury easter egg just because
-    var audio = document.createElement("audio");
-    audio.src = 'time.mp3';
-    audio.play();
+   
+  
+     audio.play();
+    
 }
 
 window.addEventListener('click',playAudio);
@@ -138,7 +142,7 @@ window.addEventListener('click',playAudio);
 
 <!--Setting video to play -->
   <video autoplay loop muted id="background">
-    <source src="http://a1.v2.phobos.apple.com.edgesuite.net/us/r1000/000/Features/atv/AutumnResources/videos/b1-3.mov" type="video/mp4">
+    <source src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov" type="video/mp4">
   </video>
 
 </body>
