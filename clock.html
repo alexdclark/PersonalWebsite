@@ -94,10 +94,16 @@
     const hourHand = document.querySelector('.hour-hand');
     const minuteHand = document.querySelector('.min-hand');
 
+  
+
+function playAudio(){
     //Adding in Freddie Mercury easter egg just because
     var audio = document.createElement("audio");
     audio.src = 'time.mp3';
     audio.play();
+}
+
+window.addEventListener('click',playAudio);
 
     function setClockHands() {
 
