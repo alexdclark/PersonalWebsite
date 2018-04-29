@@ -69,7 +69,8 @@
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
 
-/*Adding moving background magic */
+    /*Adding moving background magic */
+
     #background {
       position: fixed;
       top: 50%;
@@ -84,8 +85,6 @@
       background: url(polina.jpg) no-repeat;
       background-size: cover;
     }
-
-   
   </style>
 
   <script>
@@ -93,21 +92,21 @@
     const secondHand = document.querySelector('.second-hand');
     const hourHand = document.querySelector('.hour-hand');
     const minuteHand = document.querySelector('.min-hand');
-     
-      var audio = document.createElement("audio");
+
+    var audio = document.createElement("audio");
     audio.src = 'time.mp3';
 
-  
 
-function playAudio(){
-    //Adding in Freddie Mercury easter egg just because
-   
-  
-     audio.play();
-    
-}
 
-window.addEventListener('click',playAudio);
+    function playAudio() {
+      //Adding in Freddie Mercury easter egg just because
+
+
+      audio.play();
+
+    }
+
+    window.addEventListener('click', playAudio);
 
     function setClockHands() {
 
@@ -138,9 +137,10 @@ window.addEventListener('click',playAudio);
 
     //Calling setClockHands function every second to update hands. 
     setInterval(setClockHands, 1000);
+    
   </script>
 
-<!--Setting video to play -->
+  <!--Setting video to play -->
   <video autoplay loop muted id="background">
     <source src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov" type="video/mp4">
   </video>
