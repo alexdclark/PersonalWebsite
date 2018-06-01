@@ -60,7 +60,7 @@
     .hand {
       width: 50%;
       height: 5px;
-      background: white;
+      background: black;
       position: absolute;
       top: 50%;
       transform-origin: 100%;
@@ -84,6 +84,7 @@
       transform: translateX(-50%) translateY(-50%);
       background: url(polina.jpg) no-repeat;
       background-size: cover;
+      src: background
     }
   </style>
 
@@ -133,17 +134,43 @@
       console.log("The Current time is:", hour, ":", minutes, ":", seconds);
 
 
+      
+
+     
     }
+
+
+  let backgroundsArray = ["http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov",
+        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b9-3.mov"];
+
+  let randomIndex = Math.trunc(Math.random() *2);
+
+    //Document.style.background =backgroundsArray[randomIndex];
+    document.body.style.backgroundImage =backgroundsArray[randomIndex];
+
+    console.log(backgroundsArray[randomIndex]);
+    console.log("help" +document.body.style.backgroundImage);
+
+
+
+document.querySelector("Body").style.background="url('backgroundsArray[randomIndex]')";
 
     //Calling setClockHands function every second to update hands. 
     setInterval(setClockHands, 1000);
+
+document.querySelector("h2, h3").style.backgroundColor = "red"; 
+
+  document.getElementById(document).style.backgroundImage =backgroundsArray[randomIndex];
+    
     
   </script>
-
-  <!--Setting video to play -->
+<!--
+  <Setting video to play 
   <video autoplay loop muted id="background">
-    <source src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov" type="video/mp4">
-  </video>
+    <source src= "backgroundsArray[randomIndex]" type="video/mp4">
+    
+  </video>-->
+
 
 </body>
 
