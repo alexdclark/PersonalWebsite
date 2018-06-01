@@ -60,7 +60,7 @@
     .hand {
       width: 50%;
       height: 5px;
-      background: black;
+      background: white;
       position: absolute;
       top: 50%;
       transform-origin: 100%;
@@ -87,6 +87,11 @@
       src: background
     }
   </style>
+
+<video autoplay loop muted id="background">
+    <source id="Background" src="test" type="video/mp4">
+
+</video>
 
   <script>
     //Selecting the three clock hands for reference later.
@@ -132,11 +137,6 @@
 
 
       console.log("The Current time is:", hour, ":", minutes, ":", seconds);
-
-
-      
-
-     
     }
 
 
@@ -148,28 +148,26 @@
     //Document.style.background =backgroundsArray[randomIndex];
     document.body.style.backgroundImage =backgroundsArray[randomIndex];
 
-    console.log(backgroundsArray[randomIndex]);
-    console.log("help" +document.body.style.backgroundImage);
 
 
+    document.querySelector("#Background").src = backgroundsArray[randomIndex];
+   // document.getElementById("Background").setAttribute("src",backgroundsArray[randomIndex]);
+   // document.querySelector("video").source.src = "backgroundsArray[randomIndex]";
 
-document.querySelector("Body").style.background="url('backgroundsArray[randomIndex]')";
+    
 
     //Calling setClockHands function every second to update hands. 
     setInterval(setClockHands, 1000);
 
-document.querySelector("h2, h3").style.backgroundColor = "red"; 
+//document.querySelector("h2, h3").style.backgroundColor = "red"; 
 
-  document.getElementById(document).style.backgroundImage =backgroundsArray[randomIndex];
+ // document.getElementById(document).style.backgroundImage =backgroundsArray[randomIndex];
     
     
   </script>
-<!--
-  <Setting video to play 
-  <video autoplay loop muted id="background">
-    <source src= "backgroundsArray[randomIndex]" type="video/mp4">
-    
-  </video>-->
+
+
+ 
 
 
 </body>
