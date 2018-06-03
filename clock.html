@@ -103,16 +103,13 @@
     audio.src = 'time.mp3';
 
 
+  let backgroundsArray = ["http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov",
+        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b9-3.mov"];
 
-    function playAudio() {
-      //Adding in Freddie Mercury easter egg just because
+  
+  let randomIndex = Math.trunc(Math.random() *2);
 
-
-      audio.play();
-
-    }
-
-    window.addEventListener('click', playAudio);
+    document.querySelector("#Background").src = backgroundsArray[randomIndex];
 
     function setClockHands() {
 
@@ -139,30 +136,21 @@
       console.log("The Current time is:", hour, ":", minutes, ":", seconds);
     }
 
+  
+      function playAudio() {
+      //Adding in Freddie Mercury easter egg just because
+      audio.play();
 
-  let backgroundsArray = ["http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov",
-        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b9-3.mov"];
+      let randomIndex = Math.trunc(Math.random() *2);
+      document.querySelector("#Background").src = backgroundsArray[randomIndex];
+      console.log(document.querySelector("#Background").src);
 
-  let randomIndex = Math.trunc(Math.random() *2);
+    }
 
-    //Document.style.background =backgroundsArray[randomIndex];
-    document.body.style.backgroundImage =backgroundsArray[randomIndex];
-
-
-
-    document.querySelector("#Background").src = backgroundsArray[randomIndex];
-   // document.getElementById("Background").setAttribute("src",backgroundsArray[randomIndex]);
-   // document.querySelector("video").source.src = "backgroundsArray[randomIndex]";
-
-    
-
+    window.addEventListener('click', playAudio);
     //Calling setClockHands function every second to update hands. 
     setInterval(setClockHands, 1000);
 
-//document.querySelector("h2, h3").style.backgroundColor = "red"; 
-
- // document.getElementById(document).style.backgroundImage =backgroundsArray[randomIndex];
-    
     
   </script>
 
