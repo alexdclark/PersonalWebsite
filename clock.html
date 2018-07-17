@@ -88,7 +88,7 @@
     }
   </style>
 
-<video autoplay loop muted id="background">
+<video autoplay loop muted auto id="background">
     <source id="Background" src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov " type="video/mp4">
 
 </video>
@@ -136,26 +136,32 @@
         randomIndex = Math.trunc(Math.random() *2);
       document.querySelector("#Background").src = backgroundsArray[randomIndex];
 
+      
       console.log("The Current time is:", hour, ":", minutes, ":", seconds);
     }
 
       function playAudio() {
       //Adding in Freddie Mercury easter egg just because
      // audio.play();
-
      randomIndex = Math.trunc(Math.random() *5);
-      document.querySelector("#Background").src = backgroundsArray[randomIndex];
+     document.querySelector("#Background").src = backgroundsArray[randomIndex];
+    
+     // var tempElement = document.getElementById("Background");
+   
+  
       location.reload();
-
-       
-      console.log(document.querySelector("#Background").src);
+     
+     
+     
 
     }
 
 
     randomIndex = Math.trunc(Math.random() *5);
       document.querySelector("#Background").src = backgroundsArray[randomIndex];
-    window.addEventListener('click', playAudio);
+
+      document.getElementById("Background").addEventListener('click',playAudio);
+    
     //Calling setClockHands function every second to update hands. 
     setInterval(setClockHands, 1000);
 
