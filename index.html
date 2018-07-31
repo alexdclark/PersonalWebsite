@@ -15,7 +15,6 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-112777615-1');
-
     </script>
 
 
@@ -31,17 +30,20 @@
     <title>Alex Clark | Software Engineer</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <style type="text/css">
         body {
             padding-top: 5rem;
+            padding-bottom: 0;
         }
 
         .starter-template {
             padding: 3rem 1.5rem;
             text-align: center;
+            padding-bottom: 0;
         }
 
 
@@ -55,6 +57,15 @@
             background-size: cover;
         }
 
+        .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
     </style>
 </head>
 
@@ -64,7 +75,8 @@
     <!--Creating a bootstrap toolbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -73,7 +85,9 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/alexdclark">LinkedIn</a>
@@ -88,22 +102,34 @@
 
         </div>
     </nav>
+<!---->
+    <!--Creating a fluid container for the contents of my website 
+    <div class="container-fluid row">
 
-    <!--Creating a fluid container for the contents of my website -->
-    <div class="container-fluid">
-
-        <div class="container">
-            <div class="" style=text-align:center>
+        <div class="col-xs-12 col-md-5">
+            <img class="img-fluid rounded-circle  " src="mainpic.jpg" alt="A picture of me. style="padding-left:10px>
+            </br>
+        </div>
+    -->
+        <div class="container col-xs-12 col-md-5" style="">
+            <div class=" " style="text-align:center">
                 <h2>Hello World!</h2>
-                <p class="lead">Hello! I'm Alex Clark and I'm a Software Engineer in the Nashville, Tennessee area. I've earned a bachelor of science in Computer Science from the University of Tennessee at Martin graudating in December of 2015. After graduation I joined Accenture, one of the most successful consulting firms. Throughout my time at Accenture I served as a QA Tester for our clients taking a lead tester role for many components that were crucial to the client's success. After serving on the Quality Assurance team I joined my second client as a Content Developer configuring the software to meet the clients expectations and resolving defects. Since leaving Accenture I've worked at SAIC as a Software Test Engineer helping to automate the testing of my project.</p>
-
-                </br>
-
+            </br>
+                <p class="lead">Hello! I'm Alex Clark and I'm a Software Engineer in the Nashville, Tennessee area. I've earned a bachelor
+                    of science in Computer Science from the University of Tennessee at Martin graudating in December of 2015.
+                    After graduation I joined Accenture, one of the most successful consulting firms. Throughout my time
+                    at Accenture I served as a QA Tester for our clients taking a lead tester role for many components that
+                    were crucial to the client's success. After serving on the Quality Assurance team I joined my second
+                    client as a Content Developer configuring the software to meet the clients expectations and resolving
+                    defects. Since leaving Accenture I've worked at SAIC as a Software Test Engineer helping to automate
+                    the testing of my project.</p>
 
             </div>
         </div>
     </div>
     <!-- /.container -->
+
+</br>
 
 
 
@@ -120,7 +146,9 @@
                     <h5 class="mb-1 ">C#</h5>
                     <small>1.5 Years Experience</small>
                 </div>
-                <p class="mb-1 ">I have completed online trainings and written Windows Forms applications that interact with Microsoft SQL Server Databases. I've created automation test cases using the Selenium Web Driver library for C# to automate Web Applications increasing my productivity. </p>
+                <p class="mb-1 ">I have completed online trainings and written Windows Forms applications that interact with Microsoft SQL
+                    Server Databases. I've created automation test cases using the Selenium Web Driver library for C# to
+                    automate Web Applications increasing my productivity. </p>
             </a>
 
             <a href="#! " class="list-group-item list-group-item-action flex-column align-items-start ">
@@ -128,7 +156,10 @@
                     <h5 class="mb-1 ">Soap UI</h5>
                     <small>2 Years Experience</small>
                 </div>
-                <p class="mb-1 ">Throughout my professional career I've used both free and pro version of Soap UI to run manual test cases while also automating testing of entire web services adapting them for different SQL Databases and enviorments. I have written PowerShell scripts to automate the execution of Test Suites and built these PowerShell scripts into a Release Definition in Team Foundation Server. </p>
+                <p class="mb-1 ">Throughout my professional career I've used both free and pro version of Soap UI to run manual test cases
+                    while also automating testing of entire web services adapting them for different SQL Databases and enviorments.
+                    I have written PowerShell scripts to automate the execution of Test Suites and built these PowerShell
+                    scripts into a Release Definition in Team Foundation Server. </p>
             </a>
 
             <a href="#! " class="list-group-item list-group-item-action flex-column align-items-start ">
@@ -136,7 +167,8 @@
                     <h5 class="mb-1 ">TSQL | SQL Server Management Studio</h5>
                     <small class=" ">2 Years Experience</small>
                 </div>
-                <p class="mb-1 ">I've used SQL to test integration flows of WebServices as well as debugging Biztalk, and for creating dynamic test data. </p>
+                <p class="mb-1 ">I've used SQL to test integration flows of WebServices as well as debugging Biztalk, and for creating dynamic
+                    test data. </p>
                 <small class="text-muted ">Experience with basic Select statements and different arguments such as Order By and Where clauses.</small>
             </a>
             <a href="#! " class="list-group-item list-group-item-action flex-column align-items-start ">
@@ -144,23 +176,30 @@
                     <h5 class="mb-1 ">Team Foundation Server (TFS) and Visual Studio Team Server (VSTS)</h5>
                     <small class="">2 Years Experience</small>
                 </div>
-                <p class="mb-1 ">I have experience using TFS and VSTS for defect management, work item management, creating test suites and cases, and managing project files. I worked on a team to implement Soap UI/Ready API test automation allowing for Continuous Integration across all of our enviorments. This allowed the client to have builds go straight into Production after passing a Test Suite of test cases that tested the full functionality of the application without having a manual approval.</p>
-               
+                <p class="mb-1 ">I have experience using TFS and VSTS for defect management, work item management, creating test suites and
+                    cases, and managing project files. I worked on a team to implement Soap UI/Ready API test automation
+                    allowing for Continuous Integration across all of our enviorments. This allowed the client to have builds
+                    go straight into Production after passing a Test Suite of test cases that tested the full functionality
+                    of the application without having a manual approval.</p>
+
             </a>
             <a href="#! " class="list-group-item list-group-item-action flex-column align-items-start ">
                 <div class="d-flex w-100 justify-content-between ">
                     <h5 class="mb-1 ">PowerShell</h5>
                     <small class=" ">Less than 1 Year</small>
                 </div>
-                <p class="mb-1 ">I've used PowerShell to automate Soap UI test runs and emailing the results whenever the tests complete. I've built scripts to automate the sending of Outlook Appointments populating data from a CSV file for a Client. </p>
-                
+                <p class="mb-1 ">I've used PowerShell to automate Soap UI test runs and emailing the results whenever the tests complete.
+                    I've built scripts to automate the sending of Outlook Appointments populating data from a CSV file for
+                    a Client. </p>
+
             </a>
             <a href="#! " class="list-group-item list-group-item-action flex-column align-items-start skill">
                 <div class="d-flex w-100 justify-content-between ">
                     <h5 class="mb-1 ">Swift</h5>
                     <small class=" ">Less than 6 Months</small>
                 </div>
-                <p class="mb-1 ">I'm currently learning Swift by following the Hacking with Swift book by Paul Hudson. Check out my GitHub for a sample of the projects I've completed. </p>
+                <p class="mb-1 ">I'm currently learning Swift by following the Hacking with Swift book by Paul Hudson. Check out my GitHub
+                    for a sample of the projects I've completed. </p>
             </a>
 
         </div>
@@ -172,12 +211,6 @@
     <div class="jumbotron bg-white ">
         <h1 style="text-align: center ">My Projects</h1>
         </br>
-        <blockquote class="blockquote blockquote-reverse " style="text-align:center ">
-            <p class="mb-0 ">"You miss 100% of the shots you don't take. -Wane Gretzky" </p>
-            <footer class="blockquote-footer"> Michael Scott
-
-            </footer>
-        </blockquote>
 
 
         <div class="jumbotron jumbotron-fluid bg-white">
@@ -209,7 +242,8 @@
 
                 <div class="col-md-6">
                     <h4 class="card-title text-center">UT Martin Virtual Campus</h4>
-                    <p class="card-text">Worked with Houston Howard and Mason Cullen to recreate a portion of the UT Martin Campus using tools like AutoCad and the Unity Game Engine.</p>
+                    <p class="card-text">Worked with Houston Howard and Mason Cullen to recreate a portion of the UT Martin Campus using tools
+                        like AutoCad and the Unity Game Engine.</p>
                     <a href="495Paper.pdf" class="btn btn-primary btn-lg btn-block cardButton">Research Paper</a>
                     <a href="https://github.com/alexdclark/UTMVirtualCampus/blob/master/README.md" class="btn btn-primary btn-lg btn-block cardButton">Standalone Downloads</a>
                     </br>
@@ -228,7 +262,8 @@
                 </div>
                 <div class="col-md-6">
                     <h4 class="card-title text-center">C# SQL Music Collection</h4>
-                    <p class="card-text">Created a simple Windows Form application in C# that ran commands to pull and push data to a local SQL Database.</p>
+                    <p class="card-text">Created a simple Windows Form application in C# that ran commands to pull and push data to a local SQL
+                        Database.</p>
                     <a href="https://github.com/alexdclark/Basic-Music-Database-Windows-Form-App" class="btn btn-primary btn-lg btn-block ">Github</a>
                     </br>
                 </div>
@@ -244,31 +279,48 @@
 
                 <div class="col-md-6">
                     <h4 class="card-title text-center">Scripturize</h4>
-                    <p class="card-text" style="text-align:center"><b>Created during Code for the Kingdom Nashville  2018. </b></p>
+                    <p class="card-text" style="text-align:center">
+                        <b>Created during Code for the Kingdom Nashville 2018. </b>
+                    </p>
 
-                    Working with my teammates Abby Fleming, Geoff Webb, Jonathan Hinton, and Matthew Byrd we created a React Native application that returns a verse using an ESV Bible API. We tested our React Native application on iOS and also built it for the Android operating system. </p>
+                    Working with my teammates Abby Fleming, Geoff Webb, Jonathan Hinton, and Matthew Byrd we created a React Native application
+                    that returns a verse using an ESV Bible API. We tested our React Native application on iOS and also built
+                    it for the Android operating system. </p>
                     <a href="https://github.com/codingChewie/c42k-scripture-mem" class="btn btn-primary btn-lg btn-block cardButton">Github</a>
-                    </br>
+                 
 
                 </div>
             </div>
         </div>
 
+        <footer class="bg-dark jumbotron jumbotron-fluid  page-footer" >
+            </br>
+            <blockquote class="blockquote blockquote-reverse " style="text-align:center ">
+                <p class="mb-0 " style="color:white">"You miss 100% of the shots you don't take. -Wane Gretzky" </p>
+                <footer class="blockquote-footer"> Michael Scott
+                </footer>
+            </blockquote>
+        </footer>
 
+        
     </div>
+    
     </div>
 
-
+    
 
     <!-- Bootstrap core JavaScript==================================================- ->
                     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script>
-        (function() {
+        (function () {
             'use strict '
 
             if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -283,8 +335,8 @@
 
         }())
 
+        
     </script>
-
 </body>
 
 </html>
