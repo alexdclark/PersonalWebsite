@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>JS + CSS Clock</title>
+  <title>Apple Background Clock</title>
 </head>
 
 <body>
@@ -15,6 +15,9 @@
       <div class="hand min-hand"></div>
       <div class="hand second-hand"></div>
     </div>
+
+  </br>
+  <h1 id="clockText">Hello World</h1>
   </div>
 
 
@@ -24,6 +27,10 @@
       font-family: 'helvetica neue';
       text-align: center;
       font-size: 10px;
+    }
+
+    #clockText{
+      color:white;
     }
 
     body {
@@ -65,8 +72,8 @@
       top: 50%;
       transform-origin: 100%;
       transform: rotate(90deg);
-      transition: all 0.05s;
-      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      transition: all 0.02s;
+      transition-timing-function: cubic-bezier(0.1, .5, .58, 0.5);
     }
 
     /*Adding moving background magic */
@@ -82,7 +89,6 @@
       z-index: -100;
       -webkit-transform: translateX(-50%) translateY(-50%);
       transform: translateX(-50%) translateY(-50%);
-      background: url(polina.jpg) no-repeat;
       background-size: cover;
       src: background
     }
@@ -102,12 +108,10 @@
     var audio = document.createElement("audio");
     audio.src = 'time.mp3';
 
-
   let backgroundsArray = ["http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov",
         "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b9-3.mov","http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b6-3.mov","http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/comp_DB_D001_C005_t9_6M_HB_tag0.mov",
         "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b5-3.mov"];
 
-  
   let randomIndex = Math.trunc(Math.random() *5);
 
    // document.querySelector("#Background").src = backgroundsArray[randomIndex];
@@ -129,12 +133,22 @@
 
 
       //Getting Hour and converting to a degree and applying to hour hand.
-      const hour = now.getHours();
+      var hour = now.getHours();
       const hourDegrees = ((hour / 12) * 360) + 90;
       hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
+      var amORpm = "AM";
+
+      if (hour > 12){
+        hour = hour%12;
+        console.log("I changed the hours");
+        amORpm = "PM";
+      }
+
         randomIndex = Math.trunc(Math.random() *2);
       document.querySelector("#Background").src = backgroundsArray[randomIndex];
+
+      document.getElementById("clockText").innerHTML = hour + ":" +minutes +" "  + amORpm; 
 
       
       console.log("The Current time is:", hour, ":", minutes, ":", seconds);
@@ -150,8 +164,6 @@
    
   
       location.reload();
-     
-     
      
 
     }
