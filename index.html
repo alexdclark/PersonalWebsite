@@ -343,8 +343,11 @@
             <blockquote class="blockquote blockquote-reverse " style="text-align:center ">
                 <p class="mb-0  " id="Quote">"You miss 100% of the shots you don't take. -Wayne Gretzky" </p>
                 <footer class="blockquote-footer" id ="quoteSpeaker" > Michael Scott
-                </footer>
+                </footer>         
             </blockquote>
+        </br>
+
+            <h6 style="text-align:center"> <a href="clock.html">What time is it?</a> </h6>
         </footer>
 
 
@@ -363,25 +366,13 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script>
-        (function () {
-            'use strict '
 
-            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-                var msViewportStyle = document.createElement('style ')
-                msViewportStyle.appendChild(
-                    document.createTextNode(
-                        '@-ms-viewport{width:auto!important} '
-                    )
-                )
-                document.head.appendChild(msViewportStyle)
-            }
-
-        }())
-
+        //Creating Arrays to hold Quotes and Speakers and generating a random index based off the number of quotes I have
         let quoteOptions = ["You miss 100% of the shots you don't take. -Wayne Gretzky", "Fool me once, strike one. Fool me twice, strike three.", "Would I rather be feared or loved? Easy – both. I want people to be afraid of how much they love me.", "Pizza: the great equalizer."]
         let quoteSpeakers = ["Michael Scott", "Michael Scott", "Michael Scott", "Michael Scott"]
         let randomIndex = Math.trunc(Math.random() *4);
     
+        //Setting the quote and speaker on page load
         document.getElementById("Quote").innerHTML = quoteOptions[randomIndex];
         document.getElementById("quoteSpeaker").innerHTML = quoteSpeakers[randomIndex];
     
