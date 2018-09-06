@@ -141,15 +141,22 @@
 
       //Converting hours from military time to normal time and handling AM/PM.
       if (hour > 12){
+        if (hour>= 12){
+        amORpm = "PM";
+        }
+        
         hour = hour%12;
         console.log("I changed the hours");
-        amORpm = "PM";
+
+      
       }
 
       //If Minutes are less than 10 appending 0 to properly output minutes
       if (minutes<10){
         minutes = "0"+minutes;
       }
+
+
 
         randomIndex = Math.trunc(Math.random() *2);
       document.querySelector("#Background").src = backgroundsArray[randomIndex];
