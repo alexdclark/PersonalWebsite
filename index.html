@@ -406,7 +406,7 @@
             "Pizza: the great equalizer."
         ]
         let quoteSpeakers = ["Michael Scott", "Michael Scott", "Michael Scott", "Michael Scott"]
-        let randomIndex = Math.trunc(Math.random() * 4);
+        let randomIndex = Math.trunc(Math.random() * quoteSpeakers.length);
 
         //Setting the quote and speaker on page load
         document.getElementById("Quote").innerHTML = quoteOptions[randomIndex];
