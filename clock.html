@@ -182,7 +182,7 @@
     }
 
 
-    randomIndex = Math.trunc(Math.random() *5);
+    randomIndex = Math.trunc(Math.random() *backgroundsArray.length);
       document.querySelector("#Background").src = backgroundsArray[randomIndex];
 
       document.getElementById("Background").addEventListener('click',playAudio);
