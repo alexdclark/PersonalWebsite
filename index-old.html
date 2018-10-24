@@ -18,6 +18,10 @@
     </script>
 
 </header>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.jss"></script>
+</head>
 <!--Setting Header Information -->
 <meta charset="utf-8">
 <meta name="description" content="">
@@ -107,7 +111,7 @@
                     <a class="nav-link" href="https://www.linkedin.com/in/alexdclark">LinkedIn</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="resumeFall2018.pdf">Resume</a>
+                    <a class="nav-link" href="resumeSpring2018.pdf">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="https://github.com/alexdclark">GitHub</a>
@@ -225,7 +229,7 @@
                         <ul>
                             <li>Tested Integration Flows of Web Services and Web Applications </li>
                             <li>Used SQL Database for Dynamic Test data that changes each test run.</li>
-                            <li>Debugged Biztalk flows for Web Application and Web Services</li>
+                            <li>Debugging Biztalk flows for Web Application and Web Services</li>
                         </ul>
                     </div>
                 </div>
@@ -399,18 +403,20 @@
         crossorigin="anonymous"></script>
 
     <script>
-        //Creating Arrays to hold Quotes and Speakers and generating a random index based off the number of quotes I have
-        let quoteOptions = ["You miss 100% of the shots you don't take. -Wayne Gretzky",
-            "Fool me once, strike one. Fool me twice, strike three.",
-            "Would I rather be feared or loved? Easy – both. I want people to be afraid of how much they love me.",
-            "Pizza: the great equalizer."
-        ]
-        let quoteSpeakers = ["Michael Scott", "Michael Scott", "Michael Scott", "Michael Scott"]
-        let randomIndex = Math.trunc(Math.random() * quoteSpeakers.length);
+     var request = require("request");
 
-        //Setting the quote and speaker on page load
-        document.getElementById("Quote").innerHTML = quoteOptions[randomIndex];
-        document.getElementById("quoteSpeaker").innerHTML = quoteSpeakers[randomIndex];
+var options = { method: 'GET',
+  url: 'https://quotes-6343.restdb.io/rest/office-quotes',
+  headers: 
+   { 'cache-control': 'no-cache',
+     'x-apikey': '47eefc88260755b646d68960176bd71239d06' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+
     </script>
 </body>
 
