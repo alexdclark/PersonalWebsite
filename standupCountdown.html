@@ -106,6 +106,8 @@
 
 
 <script>
+  
+  
 // Set the date we're counting down to
 var countDownDate = new Date("Oct 26, 2018 10:00:00").getTime();
 
@@ -125,7 +127,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days  + " days " + hours + " hours "
+  document.getElementById("demo").innerHTML = days  + " days " + hours + " hour "
   + minutes + " minutes " + seconds + " seconds ";
 
   // If the count down is finished, write some text
