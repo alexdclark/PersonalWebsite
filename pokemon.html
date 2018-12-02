@@ -32,7 +32,7 @@
     <button onclick="searchPokemon()" id="searchSubmit" class="btn btn-primary">Submit</button>
 
 
-    <h1 id="iosTest">HELLO iOS will you let me update?</h1>
+    <h1 id="iosTest">hi iOS will you let me update?</h1>
 
 
 
@@ -65,6 +65,10 @@
 
 
     <script>
+
+         function debugIOS(){
+            document.getElementById("iosTest").innerHTML = "I UPDATED HOORAY. Fetch is the problem"
+         }
 
           function searchPokemon() {
 
@@ -112,7 +116,7 @@
                     document.getElementById("pokemonHeightOutput").innerHTML ="Height: " + pokemonHeight
                     document.getElementById("pokemonWeightOutput").innerHTML ="Weight: " + pokemonWeight
                     document.getElementById("pokemonNumberOutput").innerHTML = "Number: " + pokemonNumber
-                    document.getElementById("iosTest").innerHTML = "I UPDATED HOORAY. Fetch is the problem"
+                   
 
                    
 
@@ -130,7 +134,7 @@
                 });
         }
 
-         document.getElementById('searchSubmit').addEventListener(touchstart, searchPokemon);
+         document.getElementById('searchSubmit').addEventListener(touchstart, debugIOS);
 
        
     </script>
