@@ -26,7 +26,7 @@
 
     <div class="form-group">
         <label for="Pokemon Input">Search Pokemon</label>
-        <input type="text" class="form-control" id="pokemonInputBox" aria-describedby="emailHelp" placeholder="Pokemon">
+        <input type="text" class="form-control" id="pokemonInputBox"  placeholder="Pokemon">
     </div>
 
     <button onclick="searchPokemon()" id="searchSubmit" class="btn btn-primary">Submit</button>
@@ -37,16 +37,16 @@
 
 
     <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
-        <img class="card-img-top" id="pokemonImage" src="" alt="PokemonImage">
+        <img class="card-img-top" id="pokemonImage" src="https://sickr.files.wordpress.com/2013/09/pokeball.png" alt="PokemonImage">
         <div class="card-body align-items-center">
-            <h5 class="card-title" id="pokemonName"> </h5>
+            <h5 class="card-title" id="pokemonName">Search for a Pokemon</h5>
 
 
             <ul class="card-text list-unstyled">
 
-                <li id="pokemonNumberOutput">Number: </li>
-                <li id="pokemonWeightOutput">Weight: </li>
-                <li id="pokemonHeightOutput">Height: </li>
+                <li id="pokemonNumberOutput"></li>
+                <li id="pokemonWeightOutput"></li>
+                <li id="pokemonHeightOutput"></li>
 
 
 
@@ -55,8 +55,8 @@
             </ul>
         </div>
 
-        <div class="card-footer">
-            <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block">More Info</a>
+        <div class="card-footer ">
+            <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block invisible">More Info</a>
 
         </div>
     </div>
@@ -65,47 +65,6 @@
 
 
     <script>
-        var infoArray = [];
-        const options = {
-            method: 'GET',
-            body: JSON.stringify(),
-            headers: new Headers({
-
-            })
-        }
-
-
-        fetch('https://pokeapi.co/api/v2/pokemon/ditto/', options)
-            .then(res => res.json())
-            .then(posts => {
-                infoArray = posts
-
-
-                var pokemonName = infoArray.name
-                var pokemonNumber = infoArray.order
-                var pokemonType = infoArray.types.type
-                var pokemonWeight = infoArray.weight
-                var pokemonHeight = infoArray.height
-                var pokemonImage = infoArray.sprites.front_default
-
-                console.log(pokemonName + " " + pokemonNumber + " " + pokemonType + " " + pokemonWeight + " " +
-                    pokemonImage)
-
-                document.getElementById("pokemonImage").setAttribute("src", pokemonImage);
-
-                pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
-                document.getElementById("pokemonName").innerHTML = pokemonName;
-
-                document.getElementById("pokemonHeightOutput").innerHTML += pokemonHeight
-                document.getElementById("pokemonWeightOutput").innerHTML += pokemonWeight
-                document.getElementById("pokemonNumberOutput").innerHTML += pokemonNumber
-
-                document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" + pokemonName)
-
-
-
-            });
-
 
           function searchPokemon() {
 
@@ -120,8 +79,14 @@
                 })
             }
 
+            var userInput = document.getElementById("pokemonInputBox").value;
 
-            fetch('https://pokeapi.co/api/v2/pokemon/Pikachu/', options)
+            userInput = userInput.toLowerCase();
+
+            var url = "https://pokeapi.co/api/v2/pokemon/"+userInput+"/"
+
+
+            fetch(url, options)
                 .then(res => res.json())
                 .then(posts => {
                     infoArray = posts
@@ -144,12 +109,17 @@
                     pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
                     document.getElementById("pokemonName").innerHTML = pokemonName;
 
-                    document.getElementById("pokemonHeightOutput").innerHTML += pokemonHeight
-                    document.getElementById("pokemonWeightOutput").innerHTML += pokemonWeight
-                    document.getElementById("pokemonNumberOutput").innerHTML += pokemonNumber
+                    document.getElementById("pokemonHeightOutput").innerHTML ="Height: " + pokemonHeight
+                    document.getElementById("pokemonWeightOutput").innerHTML ="Weight: " + pokemonWeight
+                    document.getElementById("pokemonNumberOutput").innerHTML = "Number: " + pokemonNumber
 
                     document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" +
                         pokemonName)
+
+                    document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" +
+                        pokemonName)
+                    
+                    document.getElementById("moreInfoLink").classList.remove("invisible");
 
 
                 });
