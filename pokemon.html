@@ -23,91 +23,122 @@
 <body>
 
 
-        <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
 
-                            <div class="form-group">
-                                    <label for="Pokemon Input">Search Pokemon</label>
-                                    <input type="text" class="form-control" id="pokemonInputBox"  placeholder="Pokemon">
-                                </div>
-                            
-                                <button onclick="searchPokemon()" id="searchSubmit " class="btn btn-primary btn-block">Submit</button>
+                <div class="form-group">
+                    <label for="Pokemon Input">Search Pokemon</label>
+                    <input type="text" class="form-control" id="pokemonInputBox" placeholder="Pokemon">
+                </div>
 
-                    </div>
 
-                </br>
+                <button onclick="prepareSearch()" id="searchSubmit" class="btn btn-primary btn-block">Submit</button>
 
-                    <div class="col-sm-9">
+            </div>
 
-                            <div id ="pokemonCard" >
+            </br>
 
-                                    <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
-                                        <img class="card-img-top" id="pokemonImage" src="https://sickr.files.wordpress.com/2013/09/pokeball.png" alt="PokemonImage">
-                                        <div class="card-body align-items-center">
-                                            <h5 class="card-title" id="pokemonName">Search for a Pokemon</h5>
-                                
-                                
-                                            <ul class="card-text list-unstyled">
-                                
-                                                <li id="pokemonNumberOutput"></li>
-                                                <li id="pokemonWeightOutput"></li>
-                                                <li id="pokemonHeightOutput"></li>
-                                
-                                
-                                
-                                
-                                
-                                            </ul>
-                                        </div>
-                                
-                                        <div class="card-footer ">
-                                            <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block invisible">More Info</a>
-                                
-                                        </div>
-                                    </div>
-                                    </div>
+            <div class="col-sm-9">
+
+                <div id="pokemonCard">
+
+                    <div class="card text-center col-sm-9 mx-auto" style="width: 18rem;">
+                        <h5 class="card-title" id="pokemonName">Search for a Pokemon</h5>
+                        <img class="card-img-top" onclick="randomPokemon()" id="pokemonImage" src="https://sickr.files.wordpress.com/2013/09/pokeball.png"
+                            alt="PokemonImage">
+                        <div class="card-body align-items-center">
+
+                            <ul class="card-text list-unstyled">
+
+                                <li id="pokemonNumberOutput"></li>
+                                <li id="pokemonWeightOutput"></li>
+                                <li id="pokemonHeightOutput"></li>
+                                </br>
+                                <li <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block invisible">More
+                                    Info</a> </li>
+
+                            </ul>
+                        </div>
 
                     </div>
                 </div>
+
             </div>
-
-          
-
-
-  
+        </div>
+    </div>
 
     <script>
+        document.addEventListener("keyup", function (event) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Trigger the button element with a click
+                prepareSearch()
+            }
 
-         function debugIOS(){
-            document.getElementById("iosTest").innerHTML = "I UPDATED HOORAY. Fetch is the problem"
-         }
-
-          function searchPokemon() {
+        });
 
 
-            infoArray = [];
-          const  options = {
+
+
+
+        function prepareSearch() {
+
+            var userSearch = document.getElementById("pokemonInputBox").value;
+
+            userSearch = userSearch.toLowerCase();
+            searchPokemon(userSearch)
+
+        }
+
+        function randomPokemon() {
+
+            pokemonArray = [];
+            const options = {
                 method: 'GET',
-                
+
                 headers: new Headers({
-                  
 
                 })
             }
 
-            var userInput = document.getElementById("pokemonInputBox").value;
+            var url = "https://pokeapi.co/api/v2/pokemon/";
 
-            userInput = userInput.toLowerCase();
+            fetch(url, options)
+                .then(res => res.json())
+                .then(posts => {
+                    pokemonArray = posts
 
-            var url = "https://pokeapi.co/api/v2/pokemon/"+userInput+"/"
+                    console.log(pokemonArray)
+
+                    let randomIndexPokemon = Math.trunc(Math.random() * 802);
+                    console.log(randomIndexPokemon);
+
+                    searchPokemon(randomIndexPokemon);
+
+                });
+        }
+
+        function searchPokemon(userInput) {
+
+            infoArray = [];
+            const options = {
+                method: 'GET',
+
+                headers: new Headers({
+
+                })
+            }
+
+            var url = "https://pokeapi.co/api/v2/pokemon/" + userInput + "/"
 
 
             fetch(url, options)
                 .then(res => res.json())
                 .then(posts => {
                     infoArray = posts
-
 
                     var pokemonName = infoArray.name
                     var pokemonNumber = infoArray.order
@@ -116,44 +147,29 @@
                     var pokemonHeight = infoArray.height
                     var pokemonImage = infoArray.sprites.front_default
 
-                    console.log(pokemonName + " " + pokemonNumber + " " + pokemonType + " " + pokemonWeight + " " +
+                    console.log(pokemonName + " " + pokemonNumber + " " + pokemonType + " " + pokemonWeight +
+                        " " +
                         pokemonImage)
-
-
 
                     document.getElementById("pokemonImage").setAttribute("src", pokemonImage);
 
                     pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
 
-                  
 
                     document.getElementById("pokemonName").innerHTML = pokemonName;
-
-                    document.getElementById("pokemonHeightOutput").innerHTML ="Height: " + pokemonHeight
-                    document.getElementById("pokemonWeightOutput").innerHTML ="Weight: " + pokemonWeight
+                    document.getElementById("pokemonHeightOutput").innerHTML = "Height: " + pokemonHeight
+                    document.getElementById("pokemonWeightOutput").innerHTML = "Weight: " + pokemonWeight
                     document.getElementById("pokemonNumberOutput").innerHTML = "Number: " + pokemonNumber
-                   
 
-                   
-
-                    
-
-                    document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" +
+                    document.getElementById("moreInfoLink").setAttribute("href",
+                        "https://veekun.com/dex/pokemon/" +
                         pokemonName)
 
-                    document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" +
-                        pokemonName)
-                    
                     document.getElementById("pokemonCard").classList.remove("invisible");
                     document.getElementById("moreInfoLink").classList.remove("invisible");
 
-
                 });
         }
-
-         document.getElementById('iosTest').addEventListener(touchstart, debugIOS);
-
-       
     </script>
 
 
@@ -167,14 +183,5 @@
         crossorigin="anonymous"></script>
 
 </body>
-
-
-
-
-
-
-
-
-
 
 </html>
