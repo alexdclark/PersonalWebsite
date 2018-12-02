@@ -23,46 +23,59 @@
 <body>
 
 
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
 
-    <div class="form-group">
-        <label for="Pokemon Input">Search Pokemon</label>
-        <input type="text" class="form-control" id="pokemonInputBox"  placeholder="Pokemon">
-    </div>
+                            <div class="form-group">
+                                    <label for="Pokemon Input">Search Pokemon</label>
+                                    <input type="text" class="form-control" id="pokemonInputBox"  placeholder="Pokemon">
+                                </div>
+                            
+                                <button onclick="searchPokemon()" id="searchSubmit " class="btn btn-primary btn-block">Submit</button>
 
-    <button onclick="searchPokemon()" id="searchSubmit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </br>
+
+                    <div class="col-sm-9">
+
+                            <div id ="pokemonCard" >
+
+                                    <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
+                                        <img class="card-img-top" id="pokemonImage" src="https://sickr.files.wordpress.com/2013/09/pokeball.png" alt="PokemonImage">
+                                        <div class="card-body align-items-center">
+                                            <h5 class="card-title" id="pokemonName">Search for a Pokemon</h5>
+                                
+                                
+                                            <ul class="card-text list-unstyled">
+                                
+                                                <li id="pokemonNumberOutput"></li>
+                                                <li id="pokemonWeightOutput"></li>
+                                                <li id="pokemonHeightOutput"></li>
+                                
+                                
+                                
+                                
+                                
+                                            </ul>
+                                        </div>
+                                
+                                        <div class="card-footer ">
+                                            <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block invisible">More Info</a>
+                                
+                                        </div>
+                                    </div>
+                                    </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h5 id="iosTest">iOS</h5>
 
 
-    <h1 id="iosTest" ontouchstart="debugIOS">hi iOS will you let me change?</h1>
-
-
-
-    <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
-        <img class="card-img-top" id="pokemonImage" src="https://sickr.files.wordpress.com/2013/09/pokeball.png" alt="PokemonImage">
-        <div class="card-body align-items-center">
-            <h5 class="card-title" id="pokemonName">Search for a Pokemon</h5>
-
-
-            <ul class="card-text list-unstyled">
-
-                <li id="pokemonNumberOutput"></li>
-                <li id="pokemonWeightOutput"></li>
-                <li id="pokemonHeightOutput"></li>
-
-
-
-
-
-            </ul>
-        </div>
-
-        <div class="card-footer ">
-            <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block invisible">More Info</a>
-
-        </div>
-    </div>
-
-
-
+  
 
     <script>
 
@@ -111,6 +124,9 @@
                     document.getElementById("pokemonImage").setAttribute("src", pokemonImage);
 
                     pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+
+                  
+
                     document.getElementById("pokemonName").innerHTML = pokemonName;
 
                     document.getElementById("pokemonHeightOutput").innerHTML ="Height: " + pokemonHeight
@@ -128,13 +144,14 @@
                     document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" +
                         pokemonName)
                     
+                    document.getElementById("pokemonCard").classList.remove("invisible");
                     document.getElementById("moreInfoLink").classList.remove("invisible");
 
 
                 });
         }
 
-         document.getElementById('searchSubmit').addEventListener(touchstart, debugIOS);
+         document.getElementById('iosTest').addEventListener(touchstart, debugIOS);
 
        
     </script>
