@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <meta name="viewport" content="user-scalable=no, width=device-width shrink-to-fit=no" />
+
+
+
+    <!--Changing title of the home page (Shown in the tab bar) !-->
+    <title>Web API Test</title>
+
+    <!-- Bootstrap core CSS   -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="pokemonStyle.css">
+</head>
+
+
+<body>
+
+
+
+    <div class="form-group">
+        <label for="Pokemon Input">Search Pokemon</label>
+        <input type="text" class="form-control" id="pokemonInputBox" aria-describedby="emailHelp" placeholder="Pokemon">
+    </div>
+
+    <button onclick="searchPokemon()" id="searchSubmit" class="btn btn-primary">Submit</button>
+
+
+
+
+
+
+    <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
+        <img class="card-img-top" id="pokemonImage" src="" alt="PokemonImage">
+        <div class="card-body align-items-center">
+            <h5 class="card-title" id="pokemonName"> </h5>
+
+
+            <ul class="card-text list-unstyled">
+
+                <li id="pokemonNumberOutput">Number: </li>
+                <li id="pokemonWeightOutput">Weight: </li>
+                <li id="pokemonHeightOutput">Height: </li>
+
+
+
+
+
+            </ul>
+        </div>
+
+        <div class="card-footer">
+            <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block">More Info</a>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var infoArray = [];
+        const options = {
+            method: 'GET',
+            body: JSON.stringify(),
+            headers: new Headers({
+
+            })
+        }
+
+
+        fetch('https://pokeapi.co/api/v2/pokemon/ditto/', options)
+            .then(res => res.json())
+            .then(posts => {
+                infoArray = posts
+
+
+                var pokemonName = infoArray.name
+                var pokemonNumber = infoArray.order
+                var pokemonType = infoArray.types.type
+                var pokemonWeight = infoArray.weight
+                var pokemonHeight = infoArray.height
+                var pokemonImage = infoArray.sprites.front_default
+
+                console.log(pokemonName + " " + pokemonNumber + " " + pokemonType + " " + pokemonWeight + " " +
+                    pokemonImage)
+
+                document.getElementById("pokemonImage").setAttribute("src", pokemonImage);
+
+                pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+                document.getElementById("pokemonName").innerHTML = pokemonName;
+
+                document.getElementById("pokemonHeightOutput").innerHTML += pokemonHeight
+                document.getElementById("pokemonWeightOutput").innerHTML += pokemonWeight
+                document.getElementById("pokemonNumberOutput").innerHTML += pokemonNumber
+
+                document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" + pokemonName)
+
+
+
+            });
+
+
+          function searchPokemon() {
+
+
+            infoArray = [];
+          const  options = {
+                method: 'GET',
+                body: JSON.stringify(),
+                headers: new Headers({
+                  
+
+                })
+            }
+
+
+            fetch('https://pokeapi.co/api/v2/pokemon/Pikachu/', options)
+                .then(res => res.json())
+                .then(posts => {
+                    infoArray = posts
+
+
+                    var pokemonName = infoArray.name
+                    var pokemonNumber = infoArray.order
+                    var pokemonType = infoArray.types.type
+                    var pokemonWeight = infoArray.weight
+                    var pokemonHeight = infoArray.height
+                    var pokemonImage = infoArray.sprites.front_default
+
+                    console.log(pokemonName + " " + pokemonNumber + " " + pokemonType + " " + pokemonWeight + " " +
+                        pokemonImage)
+
+
+
+                    document.getElementById("pokemonImage").setAttribute("src", pokemonImage);
+
+                    pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+                    document.getElementById("pokemonName").innerHTML = pokemonName;
+
+                    document.getElementById("pokemonHeightOutput").innerHTML += pokemonHeight
+                    document.getElementById("pokemonWeightOutput").innerHTML += pokemonWeight
+                    document.getElementById("pokemonNumberOutput").innerHTML += pokemonNumber
+
+                    document.getElementById("moreInfoLink").setAttribute("href", "https://veekun.com/dex/pokemon/" +
+                        pokemonName)
+
+
+                });
+        }
+    </script>
+
+
+    <!-- Bootstrap core JavaScript==================================================- ->
+     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
