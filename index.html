@@ -373,9 +373,8 @@
             <footer class="bg-dark jumbotron jumbotron-fluid  page-footer" style="width:100%">
                 <br>
                 <blockquote class="blockquote blockquote-reverse " style="text-align:center">
-                    <p class="mb-0  " id="Quote">"You miss 100% of the shots you don't take. -Wayne Gretzky" </p>
-                    <footer class="blockquote-footer" id="quoteSpeaker"> Michael Scott
-                    </footer>
+                    <p class="mb-0  " id="Quote"></p>
+                    <footer class="" id="quoteSpeaker">  </footer>
                 </blockquote>
                 <br>
                 <h6 style="text-align:center"> <a href="http://alexdclark.com/clock" style="color:white">What time is
@@ -398,20 +397,53 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
 
-    <script>
-        //Creating Arrays to hold Quotes and Speakers and generating a random index based off the number of quotes I have
-        let quoteOptions = ["You miss 100% of the shots you don't take. -Wayne Gretzky",
-            "Fool me once, strike one. Fool me twice, strike three.",
-            "Would I rather be feared or loved? Easy – both. I want people to be afraid of how much they love me.",
-            "Pizza: the great equalizer."
-        ]
-        let quoteSpeakers = ["Michael Scott", "Michael Scott", "Michael Scott", "Michael Scott"]
-        let randomIndex = Math.trunc(Math.random() * quoteSpeakers.length);
-
-        //Setting the quote and speaker on page load
-        document.getElementById("Quote").innerHTML = quoteOptions[randomIndex];
-        document.getElementById("quoteSpeaker").innerHTML = quoteSpeakers[randomIndex];
-    </script>
-</body>
-
-</html>
+        <script>
+                var quoteArray = [];
+                const options = {
+                    method: 'GET',
+                    body: JSON.stringify(),
+                    headers: new Headers({
+                        'x-apikey': '5ba40e121721c63a8a26c1e7',
+                    })
+                }
+        
+        
+                fetch('https://quotes-6343.restdb.io/rest/office-quotes', options)
+                    .then(res => res.json())
+                    .then(posts => {
+                        quoteArray = posts
+                        let randomIndex = Math.trunc(Math.random() * quoteArray.length);
+                        
+                    
+                        //Setting the quote and speaker on page load
+                        document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote;
+                      
+                        document.getElementById("quoteSpeaker").classList.add("blockquote-footer");
+                        document.getElementById("quoteSpeaker").innerHTML = quoteArray[randomIndex].speaker;
+                    });
+        
+                /* fetch(`https://quotes-6343.restdb.io/rest/office-quotes`, options)
+                     .then(res => res.json())
+                     .then(posts => quoteArray = posts)
+        
+        
+                 function waitForElement() {
+                     if (quoteArray !== null) {
+                         console.log(quoteArray.length)
+                         let randomIndex = Math.trunc(Math.random() * quoteArray.length);
+        
+                         console.log(randomIndex);
+                         console.log(quoteArray.toString())
+                         //Setting the quote and speaker on page load
+                        // document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote();
+                        // document.getElementById("quoteSpeaker").innerHTML = quoteArray[randomIndex].speaker();
+                     } else {
+                         setTimeout(waitForElement, 250);
+                     }
+                 }
+        
+                  waitForElement();*/
+            </script>
+        </body>
+        
+        </html>
