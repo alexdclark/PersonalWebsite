@@ -1,3 +1,5 @@
+
+
 var quoteArray = [];
 var options = {
     method: 'GET',
@@ -13,31 +15,18 @@ fetch('https://quotes-6343.restdb.io/rest/office-quotes', options).then(function
     quoteArray = posts;
     var randomIndex = Math.trunc(Math.random() * quoteArray.length);
 
+
+    if (bowser.msie && bowser.version <= 6) {
+        document.getElementById("Quote").innerHTML = "Open this page in something other than IE to see more!"
+    }
+
+    else{
     //Setting the quote and speaker on page load
     document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote;
 
     document.getElementById("quoteSpeaker").classList.add("blockquote-footer");
     document.getElementById("quoteSpeaker").innerHTML = quoteArray[randomIndex].speaker;
+
+    }
 });
 
-/* fetch(`https://quotes-6343.restdb.io/rest/office-quotes`, options)
-     .then(res => res.json())
-     .then(posts => quoteArray = posts)
-
-
- function waitForElement() {
-     if (quoteArray !== null) {
-         console.log(quoteArray.length)
-         let randomIndex = Math.trunc(Math.random() * quoteArray.length);
-
-         console.log(randomIndex);
-         console.log(quoteArray.toString())
-         //Setting the quote and speaker on page load
-        // document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote();
-        // document.getElementById("quoteSpeaker").innerHTML = quoteArray[randomIndex].speaker();
-     } else {
-         setTimeout(waitForElement, 250);
-     }
- }
-
-  waitForElement();*/
