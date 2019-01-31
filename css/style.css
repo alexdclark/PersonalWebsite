@@ -55,6 +55,38 @@ body {
     margin-bottom: 0px;
 }
 
+#bootStrapCarousel{
+  height:650px;
+  width: 100%;
+  overflow: hidden;
+
+    margin:auto;
+}
+
+.carouselImage{
+    height:300px;
+    width: 300px;
+}
+
+.card-div{
+    height:100%;
+    overflow: hidden;
+}
+
+.card-img-top {
+    min-width: 100%;
+    height: auto;
+    }
+/*#item1{
+    background-image: url('resources/images/applemovie.mov') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
+
+
 /*div {
     border: 1px dotted red;
 }*/
