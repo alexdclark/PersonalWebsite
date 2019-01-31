@@ -73,9 +73,7 @@ body {
     overflow: hidden;
 }
 
-.card-img-top {
-  height:100%;
-    }
+
 /*#item1{
     background-image: url('resources/images/applemovie.mov') no-repeat center center fixed;
     -webkit-background-size: cover;
