@@ -1,10 +1,10 @@
 var quoteArray = [];
-const options = {
+var options = {
     method: 'GET',
     headers: new Headers({
-        'x-apikey': '5ba40e121721c63a8a26c1e7',
+        'x-apikey': '5ba40e121721c63a8a26c1e7'
     })
-}
+};
 
 
 fetch('https://quotes-6343.restdb.io/rest/office-quotes', options).then(function (res) {
