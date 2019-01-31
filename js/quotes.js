@@ -7,19 +7,18 @@ const options = {
 }
 
 
-fetch('https://quotes-6343.restdb.io/rest/office-quotes', options)
-    .then(res => res.json())
-    .then(posts => {
-        quoteArray = posts
-        let randomIndex = Math.trunc(Math.random() * quoteArray.length);
-        
-    
-        //Setting the quote and speaker on page load
-        document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote;
-      
-        document.getElementById("quoteSpeaker").classList.add("blockquote-footer");
-        document.getElementById("quoteSpeaker").innerHTML = quoteArray[randomIndex].speaker;
-    });
+fetch('https://quotes-6343.restdb.io/rest/office-quotes', options).then(function (res) {
+    return res.json();
+}).then(function (posts) {
+    quoteArray = posts;
+    var randomIndex = Math.trunc(Math.random() * quoteArray.length);
+
+    //Setting the quote and speaker on page load
+    document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote;
+
+    document.getElementById("quoteSpeaker").classList.add("blockquote-footer");
+    document.getElementById("quoteSpeaker").innerHTML = quoteArray[randomIndex].speaker;
+});
 
 /* fetch(`https://quotes-6343.restdb.io/rest/office-quotes`, options)
      .then(res => res.json())
