@@ -73,6 +73,11 @@ body {
     overflow: hidden;
 }
 
+.card-img-top{
+    max-width: 100%;
+    flex-shrink:0;
+}
+
 
 /*#item1{
     background-image: url('resources/images/applemovie.mov') no-repeat center center fixed;
