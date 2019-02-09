@@ -1,13 +1,22 @@
 if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) { //test for MSIE x.x;
     var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
-    if (ieversion>=8)
+    if (ieversion>=8){
     document.getElementById("Quote").innerHTML = "Please use something other than IE"
-    else if (ieversion>=7)
+    document.getElementById("clockLink").innerHTML = "";
+    }
+    else if (ieversion>=7){
     document.getElementById("Quote").innerHTML = "Please use something other than IE"
-    else if (ieversion>=6)
+    document.getElementById("clockLink").innerHTML = "";
+    }
+
+    else if (ieversion>=6){
     document.getElementById("Quote").innerHTML = "Please use something other than IE"
-    else if (ieversion>=5)
+    document.getElementById("clockLink").innerHTML = "";
+    }
+    else if (ieversion>=5){
     document.getElementById("Quote").innerHTML = "Please use something other than IE"
+    document.getElementById("clockLink").innerHTML = "";
+    }
    }
 
 
