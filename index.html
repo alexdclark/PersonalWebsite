@@ -39,7 +39,7 @@
 <body>
 
     <!--Creating a bootstrap toolbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,15 +71,15 @@
     <div class="container-fluid " id="websiteDiv" style="">
         <div class="row" style="text-align:center">
 
-            <div class="col-sm-4">
+            <div class="col-sm-3" id="ProfilePic">
 
-                <img src="resources/images/mainpic.jpg" class="rounded-circle img-fluid float-left">
+                <img id="selfie" src="resources/images/mainpic.jpeg" class="img-fluid float-left">
                 <br />
 
 
             </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-9" style="margin: auto">
                 <h2>Hello World!</h2>
                 </br>
 
@@ -93,12 +93,15 @@
                     second
                     client as a Content Developer configuring the software to meet the clients expectations and
                     resolving
-                    defects.
-                    <br />
-                    <br /> Since leaving Accenture I've worked at SAIC as a contractor for US Department of Agriculture
-                 and also the Food and Drug Administration. I have developed test automation of  web services and web applications. I was the lead
-                    tester on the project to put execution of test automation in the TFS Release Pipeline and adding more to the Continuous Integration and Delivery Pipelines. I was also responsible for developing a Selenium Test Automation Framework as a proof on concept. </p>
+                    defects. </p>
+                    <br/>
 
+                    <p class="lead">                    Since leaving Accenture I've worked at SAIC as a contractor for US Department of Agriculture
+                 and also the Food and Drug Administration. I have developed test automation of  web services and web applications. I was the lead
+                    tester on the project to put execution of test automation in the TFS Release Pipeline and adding more to the Continuous Integration and Delivery Pipelines. I was also responsible for developing a Selenium Test Automation Framework as a proof of concept. 
+                </div>
+            </p>
+                
             </div>
         </div>
     </div>
@@ -132,6 +135,9 @@
                 </div>
             </div>
 
+
+
+            
             <div class="card z-depth-0 bordered">
                 <div class="card-header" id="headingTwo">
                     <h5 class="mb-0">
@@ -262,68 +268,50 @@
 
         </div>
 
+    </br>
+
+    <!--
+        <h1 style="text-align: center ">About Me</h1>
+
+
+
+        
     <div class="jumbotron jumbotron-fluid bg-white row card-deck">
-<!--
-            <div class="card text-center col-sm-3 mx-auto " style="width: 18rem;">
-                <img class="card-img-top" src="resources/images/steg.jpg" alt="C++ Steganography">
+
+
+            <div class="card text-center col-sm-3 mx-auto row no-gutters" style="width: 18rem;">
+                <img class="card-img-top img-fluid" src="resources/images/fcc.png" alt="freeCodeCamp Cookeville">
                 <div class="card-body">
-                    <h5 class="card-title">Steganography</h5>
-                    <p class="card-text">I created a C++ based Terminal application that encrypted and decrypted text
-                        into pictures.</p>
+                    <h5 class="card-title">freeCodeCamp CKVL</h5>
+                    <p class="card-text">Worked with coworkers to create a freeCodeCamp monthly meetup for the city of Cookeville TN. </p>
                 </div>
 
                 <div class="card-footer">
-                    <a href="https://github.com/alexdclark/Steganography" class="btn btn-primary btn-block">Github</a>
+       
 
-                </div>
-            </div> -->
-
-
-            <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
-                <img class="card-img-top" src="resources/images/Campus.png" alt="UT Martin Virtual Campus">
-                <div class="card-body">
-                    <h5 class="card-title">UT Martin Virtual Campus</h5>
-                    <p class="card-text">Worked with Houston Howard and Mason Cullen to recreate a portion of the UT
-                        Martin Campus using tools
-                        like AUTOCAD and the Unity Game Engine.</p>
-                </div>
-
-                <div class="card-footer">
-                    <a href="https://github.com/alexdclark/UTMVirtualCampus/blob/master/README.md" class="btn btn-primary btn-fluid">Standalone
-                        Downloads</a>
-
-                    <a href="resources/documents/495Paper.pdf" class="btn btn-primary ">Research Paper </a>
+                    <a href="https://www.facebook.com/groups/free.code.camp.cookeville.TN/" class="btn btn-primary btn-block ">Join Us!</a>
                 </div>
             </div>
 
             <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
-                <img class="card-img-top" src="resources/images/sqlservernew.png" alt="C# SQL Music Collection">
+                <img class="card-img-top" src="resources/images/theOffice.jpg" alt="The Office">
                 <div class="card-body">
-                    <h5 class="card-title">C# SQL Music Collection</h5>
-                    <p class="card-text">Created a simple Windows Form application in C# that ran commands to pull and
-                        push data to a local SQL
-                        Database.
+                    <h5 class="card-title">The Office</h5>
+                    <p class="card-text">The Office is one of my all time favorite shows. It is pretty much the only reason I still have Netflix. 
                     </p>
                 </div>
 
                 <div class="card-footer">
-                    <a href="https://github.com/alexdclark/Basic-Music-Database-Windows-Form-App" class="btn btn-primary btn-block">Github</a>
+                    <a href="https://www.youtube.com/watch?v=Vmb1tqYqyII&t=49s" class="btn btn-primary btn-block">One of my favorite scenes</a>
 
                 </div>
             </div>
 
             <div class="card text-center col-sm-3 mx-auto" style="width: 18rem;">
-                <img class="" src="resources/images/cftk-logo.svg" alt="Code for the Kingdom Nashville">
+                <img class="" src="resources/images/guitar.jpg" alt="Musician">
                 <div class="card-body align-items-center">
-                    <h5 class="card-title">Code for the Kingdom - Nashville </h5>
-                    <p>
-                        <b>Created during Code for the Kingdom 2018</b>
-                    </p>
-                    <p class="card-text">Working with my teammates Abby Fleming, Geoff Webb, Jonathan Hinton, and
-                        Matthew Byrd we created a React
-                        Native application that returns a verse using an ESV Bible API. We tested our React Native
-                        application
-                        on iOS and also built it for the Android operating system.</p>
+                    <h5 class="card-title">Musician</h5>
+                    <p class="card-text">Outside of work and programming projects I enjoy playing guitar and piano in my free time. My pride and joy is my Taylor GS Mini e-Koa.</p>
                 </div>
 
                 <div class="card-footer">
@@ -333,6 +321,7 @@
             </div>
 
         </div>
+    -->
 
         <!-- Shout out to Jay Watson for the bootstrap formatting help here.-->
         <div class="row">

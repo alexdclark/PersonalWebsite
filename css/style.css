@@ -51,6 +51,12 @@ body {
     background-color: white;
 }
 
+#selfie{
+    max-width:500px;
+    max-height:500px;
+    border-radius: 35%;
+}
+
 .jumbotron {
     margin-bottom: 0px;
 }
@@ -78,6 +84,11 @@ body {
     flex-shrink:0;
 }
 
+#ProfilePic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*#item1{
     background-image: url('resources/images/applemovie.mov') no-repeat center center fixed;
