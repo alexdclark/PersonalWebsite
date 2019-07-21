@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <meta name="viewport" content="user-scalable=no, width=device-width shrink-to-fit=no" />
+
+    <title>Bible Verse Lookup</title>
+
+    <!-- Bootstrap core CSS   -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+       
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                            <h1 class="centerBoostrapColumn align-middle">Bible Verse</h1>
+                    </div>
+                    <div class="col-sm-4">
+                            <formgroup>
+                                    <input class="form-control" id="bibleBook"  placeholder="Book">
+                                    <input class="form-control" id="bibleChapter"  placeholder="Chapter">
+                                    <input class="form-control" id="bibleVerse"  placeholder="Verse">
+                                    <button onclick="searchVerse()" id="searchSubmit" class="btn btn-block btn-primary center">Search Verse</button>
+                                </formgroup>
+                    </div>
+                    <div class="col-sm-6">
+                        <blockquote id="verseContainer" class="blockquote text-center" style="display: none">
+                                <p id ="verseText" class="mb-0"></p>
+                                <footer class="blockquote-footer" id="verseReference"></footer>
+                              </blockquote> 
+                            </div>
+                </div>
+
+</body>
+    <script>
+        document.addEventListener("keyup", function (event) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Trigger the button element with a click
+                searchVerse()
+            }
+
+        });
+
+
+        function searchVerse(Book, Chapter,Verse) {
+
+            infoArray = [];
+            const options = {
+                method: 'GET',
+
+                headers: new Headers({
+
+                })
+            }
+
+            var book = document.getElementById("bibleBook").value;
+            var chapter = document.getElementById("bibleChapter").value;
+            var verse = document.getElementById("bibleVerse").value;
+
+            var url = "https://bible-api.com/" +book + " " + chapter +":" + verse
+
+            fetch(url, options)
+                .then(res => res.json())
+                .then(posts => {
+                    infoArray = posts
+
+                    var verseText = infoArray.text;
+
+
+                    if (verseText == "undefined" ){  
+                        verseText = "Please enter a bible verse."
+                    }
+
+                    document.getElementById("verseText").innerHTML = verseText
+                   
+                    var verseReference = infoArray.reference;
+        
+                    document.getElementById("verseReference").innerHTML = verseReference;
+
+                    document.getElementById("verseContainer").style = "";
+
+                    console.log(verseText + verseReference);
+   
+                });
+        }
+    </script>
+
+
+    <!-- Bootstrap core JavaScript==================================================- ->
+     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
