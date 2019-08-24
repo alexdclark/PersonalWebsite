@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Countdown Block</title>
+</head>
+
+<body>
+
+  <p id ="countDownContainer" ></p>
+
+
+<video autoplay loop muted auto id="background">
+    <source id="Background" src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov " type="video/mp4">
+
+</video>
+
+  <script>
+    //Selecting the three clock hands for reference later.
+    const countDown = document.querySelector('.countDownContainer');
+
+    var countDownDate = new Date("Mar 27, 2020 16:00:00").getTime();
+
+    var x = setInterval(function(){
+
+      var now = new Date().getTime();
+
+      var howLong = countDownDate - now;
+
+      var days = Math.floor(howLong / (1000*60*60*24));
+      var hours = Math.floor((howLong % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((howLong % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((howLong % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+  document.getElementById("countDownContainer").innerHTML = days + " Days " + hours + " Hours "
+  + minutes + " Minutes " + seconds + " Seconds ";
+
+
+
+// If the count down is finished, write some text
+if (howLong < 0) {
+    clearInterval(x);
+    document.getElementById("countDownContainer").innerHTML = "How many SPL Deployments did we get?";
+  }
+    }, 1000);
+
+
+  let backgroundsArray = ["http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov",
+        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b9-3.mov","http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b6-3.mov","http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/comp_DB_D001_C005_t9_6M_HB_tag0.mov",
+        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b5-3.mov"];
+  let randomIndex = Math.trunc(Math.random() *5);
+   // document.querySelector("#Background").src = backgroundsArray[randomIndex];
+
+
+      document.querySelector("#Background").src = backgroundsArray[randomIndex];
+
+  </script>
+
+
+</body>
+
+<style>
+    p {
+      text-align: center;
+      font-size: 75px;
+
+      margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color:white;
+
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 75px;
+
+      margin: 0;
+  position: absolute;
+
+  color:white;
+
+    }
+      /*Adding moving background magic */
+      #background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      background-size: cover;
+      src: background
+    }
+    </style>
+
+</html>
