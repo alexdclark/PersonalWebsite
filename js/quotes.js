@@ -3,8 +3,6 @@ if (navigator.msMaxTouchPoints !== void 0){
     document.getElementById("clockLink").innerHTML = "";
 }
 
-
-
 else{
 var quoteArray = [];
 var options = {
@@ -14,14 +12,12 @@ var options = {
     })
 };
 
+fetch('https://quotes-6343.restdb.io/rest/office-quotes', options).then( (res) => res.json())
+.then(function (posts) {
 
-fetch('https://quotes-6343.restdb.io/rest/office-quotes', options).then(function (res) {
-    return res.json();
-}).then(function (posts) {
     quoteArray = posts;
     var randomIndex = Math.trunc(Math.random() * quoteArray.length);
 
-    
     //Setting the quote and speaker on page load
     document.getElementById("Quote").innerHTML = quoteArray[randomIndex].quote;
 
