@@ -38,7 +38,7 @@
      var amORpm = "AM";
 
      //Converting hours from military time to normal time and handling AM/PM.
-     if (hour > 12){
+     if (hour >= 12){
        if (hour>= 12){
        amORpm = "PM";
        }
