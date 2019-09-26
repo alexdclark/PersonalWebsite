@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Javascript Countdown Block</title>
+  <title>Celebration Countdown</title>
 </head>
 
 <body>
@@ -29,12 +29,15 @@
       var howLong = countDownDate - now;
 
       var days = Math.floor(howLong / (1000*60*60*24));
+      var weeks = days /7;
+      days = days - weeks*2;
+
       var hours = Math.floor((howLong % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((howLong % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((howLong % (1000 * 60)) / 1000);
 
       // Display the result in the element with id="demo"
-  document.getElementById("countDownContainer").innerHTML = days + " Days " + hours + " Hours "
+  document.getElementById("countDownContainer").innerHTML = days + " Working Days " + hours + " Hours "
   + minutes + " Minutes " + seconds + " Seconds ";
 
 
@@ -47,9 +50,9 @@ if (howLong < 0) {
     }, 1000);
 
 
-  let backgroundsArray = ["http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b8-2.mov",
-        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b9-3.mov","http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b6-3.mov","http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/comp_DB_D001_C005_t9_6M_HB_tag0.mov",
-        "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b5-3.mov"];
+  let backgroundsArray = ["https://sylvan.apple.com/Videos/comp_GMT329_113NC_396B_1105_ITALY_v03_SDR_FINAL_20180706_SDR_2K_AVC.mov",
+        "https://sylvan.apple.com/Videos/comp_H007_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_N008_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_L012_c002_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov",
+        "https://sylvan.apple.com/Videos/comp_GMT060_117NC_363D_1034_AUSTRALIA_v35_SDR_PS_FINAL_20180731_SDR_2K_AVC.mov", "https://sylvan.apple.com/Videos/comp_A001_C001_120530_v04_SDR_FINAL_20180706_SDR_2K_AVC.mov"];
   let randomIndex = Math.trunc(Math.random() *5);
    // document.querySelector("#Background").src = backgroundsArray[randomIndex];
 
