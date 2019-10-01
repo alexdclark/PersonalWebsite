@@ -8,7 +8,10 @@
 
 <body>
 
-  <p id ="countDownContainer" ></p>
+  <p id ="WorkDayContainer" ></p>
+    <p id ="HourContainer" ></p>
+    <p id ="MinuteContainer" ></p>
+    <p id ="SecondContainer" ></p>
 
 
 <video autoplay loop muted auto id="background">
@@ -37,8 +40,15 @@
       var seconds = Math.floor((howLong % (1000 * 60)) / 1000);
 
       // Display the result in the element with id="demo"
+      
+      document.getElementById("WorkDayContainer").innerHTML = days + " Working Days";
+        document.getElementById("HourContainer").innerHTML = hours + " Hours ";
+        document.getElementById("MinuteContainer").innerHTML = minutes + " Minutes ";
+        document.getElementById("SecondContainer").innerHTML = seconds + " Seconds ";
+      
+      /*
   document.getElementById("countDownContainer").innerHTML = days + " Working Days " + hours + " Hours "
-  + minutes + " Minutes " + seconds + " Seconds ";
+  + minutes + " Minutes " + seconds + " Seconds ";*/
 
 
 
