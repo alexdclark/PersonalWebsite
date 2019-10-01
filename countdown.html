@@ -8,13 +8,10 @@
 
 <body>
 
-  <p id ="WorkDayContainer" ></p>
-  <br>
-    <p id ="HourContainer" ></p>
-  <br>
-    <p id ="MinuteContainer" ></p>
-  <br>
-    <p id ="SecondContainer" ></p>
+
+
+  <p id ="countDownContainer" ></p>
+
 
 
 <video autoplay loop muted auto id="background">
@@ -44,14 +41,11 @@
 
       // Display the result in the element with id="demo"
       
-      document.getElementById("WorkDayContainer").innerHTML = days + " Working Days";
-        document.getElementById("HourContainer").innerHTML = hours + " Hours ";
-        document.getElementById("MinuteContainer").innerHTML = minutes + " Minutes ";
-        document.getElementById("SecondContainer").innerHTML = seconds + " Seconds ";
+    
       
-      /*
-  document.getElementById("countDownContainer").innerHTML = days + " Working Days " + hours + " Hours "
-  + minutes + " Minutes " + seconds + " Seconds ";*/
+      
+  document.getElementById("countDownContainer").innerHTML = days + " Working Days <br>" + hours + " Hours <br>"
+  + minutes + " Minutes <br>" + seconds + " Seconds <br>";
 
 
 
@@ -63,14 +57,14 @@ if (howLong < 0) {
     }, 1000);
 
 
-  let backgroundsArray = ["https://sylvan.apple.com/Videos/comp_GMT329_113NC_396B_1105_ITALY_v03_SDR_FINAL_20180706_SDR_2K_AVC.mov",
-        "https://sylvan.apple.com/Videos/comp_H007_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_N008_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_L012_c002_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov",
-        "https://sylvan.apple.com/Videos/comp_GMT060_117NC_363D_1034_AUSTRALIA_v35_SDR_PS_FINAL_20180731_SDR_2K_AVC.mov", "https://sylvan.apple.com/Videos/comp_A001_C001_120530_v04_SDR_FINAL_20180706_SDR_2K_AVC.mov"];
-  let randomIndex = Math.trunc(Math.random() *5);
-   // document.querySelector("#Background").src = backgroundsArray[randomIndex];
+  // let backgroundsArray = ["https://sylvan.apple.com/Videos/comp_GMT329_113NC_396B_1105_ITALY_v03_SDR_FINAL_20180706_SDR_2K_AVC.mov",
+  //       "https://sylvan.apple.com/Videos/comp_H007_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_N008_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_L012_c002_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov",
+  //       "https://sylvan.apple.com/Videos/comp_GMT060_117NC_363D_1034_AUSTRALIA_v35_SDR_PS_FINAL_20180731_SDR_2K_AVC.mov", "https://sylvan.apple.com/Videos/comp_A001_C001_120530_v04_SDR_FINAL_20180706_SDR_2K_AVC.mov"];
+  // let randomIndex = Math.trunc(Math.random() *5);
+  //  // document.querySelector("#Background").src = backgroundsArray[randomIndex];
 
 
-      document.querySelector("#Background").src = backgroundsArray[randomIndex];
+  //     document.querySelector("#Background").src = backgroundsArray[randomIndex];
 
   </script>
 
