@@ -58,8 +58,7 @@ body {
 }
 
 #selfie{
-    max-width:500px;
-    max-height:500px;
+    max-width:100%;
     border-radius: 35%;
 }
 
