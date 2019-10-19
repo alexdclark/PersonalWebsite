@@ -92,6 +92,14 @@ body {
     margin-right: auto;
 }
 
+@media (prefers-color-scheme: dark) {
+    .day.dark-scheme   { background:  #333; color: white; }
+    .night.dark-scheme { background: black; color:  #ddd; }
+  }
+li{
+    color:black;
+}
+.panel-body {background-color:black;}
 /*#item1{
     background-image: url('resources/images/applemovie.mov') no-repeat center center fixed;
     -webkit-background-size: cover;
