@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Celebration Countdown</title>
+</head>
+
+<body>
+
+
+
+  <p id ="countDownContainer" ></p>
+
+
+
+<video autoplay loop muted auto id="background">
+    <source id="Background" src="./resources/images/acvideo.mp4 " type="video/mp4">
+
+</video>
+
+  <script>
+    //Selecting the three clock hands for reference later.
+    const countDown = document.querySelector('.countDownContainer');
+
+    var countDownDate = new Date("Mar 20, 2020 0:00:00").getTime();
+
+    var x = setInterval(function(){
+
+      var now = new Date().getTime();
+
+      var howLong = countDownDate - now;
+
+      var days = Math.floor(howLong / (1000*60*60*24));
+      var weeks = days /7;
+      days = Math.floor(days);
+
+      var hours = Math.floor((howLong % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((howLong % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((howLong % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      
+    
+      
+      
+  document.getElementById("countDownContainer").innerHTML = days + " Days <br>" + hours + " Hours <br>"
+  + minutes + " Minutes <br>" + seconds + " Seconds <br>";
+
+
+
+// If the count down is finished, write some text
+if (howLong < 0) {
+    clearInterval(x);
+    document.getElementById("countDownContainer").innerHTML = "THE WAIT IS OVER";
+  }
+    }, 1000);
+
+
+  // let backgroundsArray = ["https://sylvan.apple.com/Videos/comp_GMT329_113NC_396B_1105_ITALY_v03_SDR_FINAL_20180706_SDR_2K_AVC.mov",
+  //       "https://sylvan.apple.com/Videos/comp_H007_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_N008_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov","https://sylvan.apple.com/Videos/comp_L012_c002_PS_v01_SDR_PS_20180925_SDR_2K_AVC.mov",
+  //       "https://sylvan.apple.com/Videos/comp_GMT060_117NC_363D_1034_AUSTRALIA_v35_SDR_PS_FINAL_20180731_SDR_2K_AVC.mov", "https://sylvan.apple.com/Videos/comp_A001_C001_120530_v04_SDR_FINAL_20180706_SDR_2K_AVC.mov"];
+  // let randomIndex = Math.trunc(Math.random() *5);
+  //  // document.querySelector("#Background").src = backgroundsArray[randomIndex];
+
+
+  //     document.querySelector("#Background").src = backgroundsArray[randomIndex];
+
+  </script>
+
+
+</body>
+
+<style>
+    p {
+      text-align: center;
+      font-size: 75px;
+
+      margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color:white;
+
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 75px;
+
+      margin: 0;
+  position: absolute;
+
+  color:white;
+
+    }
+      /*Adding moving background magic */
+      #background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      background-size: cover;
+      src: background
+    }
+    </style>
+
+</html>
