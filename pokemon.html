@@ -54,6 +54,7 @@
                                 <li id="pokemonNumberOutput"></li>
                                 <li id="pokemonWeightOutput"></li>
                                 <li id="pokemonHeightOutput"></li>
+                                <li id="pokemonXPOutput"></li>
                                 </br>
                                 <a href="https://veekun.com/dex/pokemon/" id="moreInfoLink" class="btn btn-primary btn-block invisible">More
                                     Info</a> 
@@ -146,6 +147,7 @@
                     var pokemonWeight = infoArray.weight
                     var pokemonHeight = infoArray.height
                     var pokemonImage = infoArray.sprites.front_default
+                    var baseExp = infoArray.base_experience
 
                     console.log(pokemonName + " " + pokemonNumber + " " + pokemonType + " " + pokemonWeight +
                         " " +
@@ -160,7 +162,7 @@
                     document.getElementById("pokemonHeightOutput").innerHTML = "Height: " + pokemonHeight
                     document.getElementById("pokemonWeightOutput").innerHTML = "Weight: " + pokemonWeight
                     document.getElementById("pokemonNumberOutput").innerHTML = "Number: " + pokemonNumber
-
+                    document.getElementById("pokemonXPOutput").innerHTML = "XP: " + baseExp
                     document.getElementById("moreInfoLink").setAttribute("href",
                         "https://veekun.com/dex/pokemon/" +
                         pokemonName)
