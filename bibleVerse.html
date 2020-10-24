@@ -51,6 +51,8 @@
                 searchVerse()
             }
 
+            searchVerse()
+
         });
 
 
@@ -78,11 +80,9 @@
 
                     var verseText = infoArray.text;
 
+                    console.log(verseText)
 
-                    if (verseText == "undefined" ){  
-                        verseText = "Please enter a bible verse."
-                    }
-
+                  if(book != ""&& chapter != "" && verse !=""){
                     document.getElementById("verseText").innerHTML = verseText
                    
                     var verseReference = infoArray.reference;
@@ -91,7 +91,7 @@
 
                     document.getElementById("verseContainer").style = "";
 
-                   
+                  }
    
                 });
         }
